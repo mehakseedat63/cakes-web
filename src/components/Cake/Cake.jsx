@@ -106,13 +106,13 @@ const Cake = () => {
                     </div>
 				</div>
 			</div>
-           {data && data.length &&  <div className="row d-flex justify-content-space-between align-items-stretch pl-2">
+           {(data && data.length) ?  <div className="row d-flex justify-content-space-between align-items-stretch pl-2">
                 {data.map(cake => {
                     return (
                       <SingleCake key={cake.id} cakeData={cake} onEdit={onEdit} onDelete={onDelete}></SingleCake>
                     );
                 })}
-            </div>}
+            </div> : <div className="text-center">No Cakes Found</div>}
             <Modal
                 show={showForm}
                 onHide={handleClose}
